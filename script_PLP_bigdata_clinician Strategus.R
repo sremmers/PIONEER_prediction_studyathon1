@@ -416,6 +416,7 @@ analysisSpecifications_bigdata <- createEmptyAnalysisSpecificiations() %>%
   addModuleSpecifications(createCohortGeneratorModuleSpecifications()) %>%
   addModuleSpecifications(createPatientLevelPredictionModuleSpecifications2())
 
-ParallelLogger::saveSettingsToJson(analysisSpecifications, 'V:/Users/039757Remmers/Bestanden_urologie/PIONEER/FINALPLPpackagesPIONEER/PIONEER_clinician_driven_model.json')
-ParallelLogger::saveSettingsToJson(analysisSpecifications_bigdata, 'V:/Users/039757Remmers/Bestanden_urologie/PIONEER/FINALPLPpackagesPIONEER/PIONEER_bigdata_model.json')
+outputfolder <- getwd()
+ParallelLogger::saveSettingsToJson(analysisSpecifications, paste0(outputfolder, "/PIONEER_clinician_driven_model.json"))
+ParallelLogger::saveSettingsToJson(analysisSpecifications_bigdata, paste0(outputfolder, "/PIONEER_bigdata_model.json"))
 
